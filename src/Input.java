@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class Input {
 
+    public Input() {
+    }
 
-    public void readLines (){
+    public void readLines (Lines inputLines){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Introduce las lineas de texto (para terminar introduce una linea vacia):");
-        
-        Lines inputLines = new Lines("inputLines");
-        Lines shiftedLines = new Lines("shiftedLines");
 
         String line = scanner.nextLine();
 
