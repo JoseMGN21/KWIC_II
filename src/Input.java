@@ -11,6 +11,7 @@ public class Input {
         System.out.println("Introduce las lineas de texto (para terminar introduce una linea vacia):");
         
         Lines inputLines = new Lines("inputLines");
+        Lines shiftedLines = new Lines("shiftedLines");
 
         String line = scanner.nextLine();
 
