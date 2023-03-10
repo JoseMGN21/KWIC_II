@@ -11,7 +11,7 @@ public class Prueba {
 
         Lines inputLines = new Lines("inputLines");
     
-        Lines shiftedLines = new Lines("shiftedLines");
+       // Lines shiftedLines = new Lines("shiftedLines"); 
 
         ejemoPrueba.readInputs(inputLines);
         ejemoPrueba.alphabetizer(inputLines);
