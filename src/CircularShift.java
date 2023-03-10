@@ -4,7 +4,25 @@ public class CircularShift implements IChangeObserver {
     }
     public void notify(Lines changedLine) {
         if(changedLine.name == "inputLines") {
-            circularShift(changedLine);
+            CircularShift(changedLine);
+        }
+    }
+
+    public void circularShift(Lines inputLines, Lines shiftedLines) {
+        for(int i = 0; i < inputLines.getLines().size(); i++) {
+            String line = inputLines.getLines().get(i);
+            String[] words = line.split(" ");
+            String newLine = "";
+            for(int j = 0; j < words.length; j++) {
+                newLine = "";
+                for(int k = j; k < words.length; k++) {
+                    newLine += words[k] + " ";
+                }
+                for(int k = 0; k < j; k++) {
+                    newLine += words[k] + " ";
+                }
+                shiftedLines.storageLines(newLine);
+            }
         }
     }
 }

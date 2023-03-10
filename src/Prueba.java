@@ -11,11 +11,11 @@ public class Prueba {
 
         Lines inputLines = new Lines("inputLines");
     
-       // Lines shiftedLines = new Lines("shiftedLines"); 
-
+        Lines shiftedLines = new Lines("shiftedLines"); 
         ejemoPrueba.readInputs(inputLines);
-        ejemoPrueba.alphabetizer(inputLines);
-        ejemoPrueba.output(inputLines);
+       // ejemoPrueba.alphabetizer(inputLines);
+        ejemoPrueba.circularShift(inputLines, shiftedLines);
+        ejemoPrueba.output(shiftedLines);
     }
 
     public void readInputs(Lines inputLines) {
@@ -23,6 +23,12 @@ public class Prueba {
         Input input = new Input();
         
         input.readLines(inputLines);
+    }
+
+    public void circularShift(Lines inputLines, Lines shiftedLines) {
+        CircularShift shift = new CircularShift();
+
+        shift.circularShift(inputLines, shiftedLines);
     }
 
     public void alphabetizer(Lines inputLines) {
