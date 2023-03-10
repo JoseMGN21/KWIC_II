@@ -5,9 +5,7 @@ public class CircularShift {
     public CircularShift() {
     }
 
-    public void circularShift(Lines inputLines, Lines shiftedLines) {
-        for(int i = 0; i < inputLines.getLines().size(); i++) {
-            String line = inputLines.getLines().get(i);
+    public String circularShift(String line) {
             String[] words = line.split(" ");
             String newLine = "";
             for(int j = 0; j < words.length; j++) {
@@ -18,9 +16,17 @@ public class CircularShift {
                 for(int k = 0; k < j; k++) {
                     newLine += words[k] + " ";
                 }
-                shiftedLines.storageLines(newLine);
             }
-        }
+            return newLine;
     }
+
+    public void addLineShifted(String Line){
+        shiftedLines.storageLines(Line);
+    }
+
+
+
+
+    
     
 }
