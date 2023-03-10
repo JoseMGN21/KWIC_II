@@ -5,11 +5,10 @@ public class CircularShift implements IChangeObserver {
     public void notify(Lines changedLine) {
         if(changedLine.name == "inputLines") {
             CircularShift(changedLine);
-            
         }
     }
 
-    public void circularShift(Lines inputLines, Lines shiftedLines) {
+    public void circularShift(Lines inputLines) {
         for(int i = 0; i < inputLines.getLines().size(); i++) {
             String line = inputLines.getLines().get(i);
             String[] words = line.split(" ");

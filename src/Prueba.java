@@ -7,15 +7,17 @@ public class Prueba {
 
     public static void main(String[] args) {
 
-        Prueba ejemoPrueba = new Prueba();
+        Prueba ejemploPrueba = new Prueba();
 
         Lines inputLines = new Lines("inputLines");
     
         Lines shiftedLines = new Lines("shiftedLines"); 
-        ejemoPrueba.readInputs(inputLines);
-       // ejemoPrueba.alphabetizer(inputLines);
-        ejemoPrueba.circularShift(inputLines, shiftedLines);
-        ejemoPrueba.output(shiftedLines);
+
+        
+        ejemploPrueba.readInputs(inputLines);
+       // ejemploPrueba.alphabetizer(inputLines);
+        ejemploPrueba.circularShift(inputLines, shiftedLines);
+        ejemploPrueba.output(shiftedLines);
     }
 
     public void readInputs(Lines inputLines) {
@@ -27,13 +29,13 @@ public class Prueba {
 
     public void circularShift(Lines inputLines, Lines shiftedLines) {
         CircularShift shift = new CircularShift();
-
+        TElement.addChangeObservers(shift);
         shift.circularShift(inputLines, shiftedLines);
     }
 
     public void alphabetizer(Lines inputLines) {
         Aphabetizer order = new Aphabetizer();
-        
+        TElement.addChangeObservers(order);
         order.organizeLines(inputLines.getLines());
     }
 

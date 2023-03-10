@@ -10,4 +10,7 @@ public abstract class TElement extends Object {
     public void registerWithChangeEvent(ChangeObserver o) {
         changeObservers.add(o);
     }
+    public void addChangeObservers(ChangeObserver o){
+        changeObservers.add(o);
+    }
 }
