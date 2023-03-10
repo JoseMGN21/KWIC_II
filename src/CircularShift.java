@@ -5,6 +5,7 @@ public class CircularShift implements IChangeObserver {
     public void notify(Lines changedLine) {
         if(changedLine.name == "inputLines") {
             CircularShift(changedLine);
+            
         }
     }
 
