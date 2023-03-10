@@ -14,8 +14,8 @@ public class Prueba {
         Lines shiftedLines = new Lines("shiftedLines");
 
         ejemoPrueba.readInputs(inputLines);
-        ejemoPrueba.alphabetizer(inputLines, shiftedLines);
-        ejemoPrueba.output(shiftedLines);
+        ejemoPrueba.alphabetizer(inputLines);
+        ejemoPrueba.output(inputLines);
     }
 
     public void readInputs(Lines inputLines) {
@@ -25,7 +25,7 @@ public class Prueba {
         input.readLines(inputLines);
     }
 
-    public void alphabetizer(Lines inputLines, Lines shiftedLines) {
+    public void alphabetizer(Lines inputLines) {
         Aphabetizer order = new Aphabetizer();
         
         order.organizeLines(inputLines.getLines());
