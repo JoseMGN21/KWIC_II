@@ -1,10 +1,14 @@
+package src;
+import src.MasterControl;
+
+
 public class CircularShift implements IChangeObserver {
-    public void registerWith(TElement element) {
+   /*  public void registerWith(TElement element) {
         TElement.registerWithChangeEvent(this);
-    }
-    public void notify(Lines changedLine) {
+    }*/
+    public void notifyListener(Lines changedLine) {
         if(changedLine.name == "inputLines") {
-            CircularShift(changedLine);
+            circularShift(changedLine);
         }
     }
 
@@ -21,8 +25,9 @@ public class CircularShift implements IChangeObserver {
                 for(int k = 0; k < j; k++) {
                     newLine += words[k] + " ";
                 }
-                shiftedLines.storageLines(newLine);
+                MasterControl.shiftedLines.storageLines(newLine);
             }
         }
+        MasterControl.inputLines.clearLines();
     }
 }

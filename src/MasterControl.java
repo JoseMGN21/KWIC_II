@@ -1,12 +1,17 @@
+package src;
+
 import javax.swing.event.ChangeListener;
 
 public class MasterControl{
-    public static void main(String[] args) {
-        Lines inputLines = new Lines("inputLines");
-        Lines shiftedLines = new Lines("shiftedLines");
+    public static Lines shiftedLines;
+    public static Lines inputLines;
 
-        ChangeListener shift = new CircularShift();
-        ChangeListener order = new Aphabetizer();
+    public static void main(String[] args) {
+        inputLines = new Lines("inputLines");
+        shiftedLines = new Lines("shiftedLines");
+
+        IChangeObserver shift = new CircularShift();
+        IChangeObserver order = new Aphabetizer();
 
         TElement.addChangeObservers(shift);
         TElement.addChangeObservers(order);

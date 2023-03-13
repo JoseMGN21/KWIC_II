@@ -3,10 +3,11 @@ package src;
 import java.util.List;
 
 public class Aphabetizer implements IChangeObserver {
-    public void registerWith(TElement element) {
+    /*public void registerWith(TElement element) {
         TElement.registerWithChangeEvent(this);
-    }
-    public void notify(Lines changedLine) {
+    }*/
+    @Override
+    public void notifyListener(Lines changedLine) {
         if(changedLine.name == "shiftedLines"){
             organizeLines(changedLine.getLines());
         }
@@ -28,7 +29,8 @@ public class Aphabetizer implements IChangeObserver {
             lines.set(j+1, actual);
         
         }
-    
+    if(lines.size() == 1)
+        lines.set(0,lines.get(0));
     }
     
 }
