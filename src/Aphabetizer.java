@@ -26,7 +26,6 @@ public class Aphabetizer implements IChangeObserver {
         }
 
     if(lines.size() == 1)
-
         lines.set(0,lines.get(0));
     }
 
@@ -39,5 +38,5 @@ public class Aphabetizer implements IChangeObserver {
         else
             return false;
     }
-    
+
 }
