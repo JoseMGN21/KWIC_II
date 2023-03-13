@@ -25,7 +25,4 @@ public class Input {
         scanner.close();
 
     }
-
-
-    
 }

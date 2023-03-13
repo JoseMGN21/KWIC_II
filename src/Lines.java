@@ -3,9 +3,9 @@ package src;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lines {
+public class Lines extends TElement {
 
-    private String name;
+    String name;
     List<String> lines = new ArrayList<String>();
 
     public Lines(String name) {
@@ -14,7 +14,11 @@ public class Lines {
 
     public void storageLines(String line){
         lines.add(line);
+        announceChangeEvent(this);
+    }
 
+    public void clearLines(){
+        lines.clear();
     }
 
     public List<String> getLines() {
