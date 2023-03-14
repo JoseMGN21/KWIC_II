@@ -31,12 +31,21 @@ public class Aphabetizer implements IChangeObserver {
 
     public boolean checkWordOrder(String actual, String line) {
         int index = 0;
-        while(Character.toLowerCase(actual.charAt(index)) == Character.toLowerCase(line.charAt(index)))
+        //while(Character.toLowerCase(actual.charAt(index)) == Character.toLowerCase(line.charAt(index)))
+        while(Character.toLowerCase(checkAccent(actual, index)) == Character.toLowerCase(checkAccent(line, index)))
             index++;
-        if(Character.toLowerCase(actual.charAt(index)) < Character.toLowerCase(line.charAt(index)))
+        //if(Character.toLowerCase(actual.charAt(index)) < Character.toLowerCase(line.charAt(index)))
+        if(Character.toLowerCase(checkAccent(actual, index)) < Character.toLowerCase(checkAccent(line, index)))
             return true;
         else
             return false;
     }
 
+    public char checkAccent(String line, int index){
+        for (int i = 0; i < 12; i++) {
+            if(line.charAt(index) == EAccents.values()[i].toString().charAt(0)) 
+                return EAccents.values()[i+12].toString().charAt(0);
+        }
+        return line.charAt(index);
+    }
 }
