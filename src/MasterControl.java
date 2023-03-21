@@ -11,8 +11,8 @@ public class MasterControl{
         IChangeObserver shift = new CircularShift();
         IChangeObserver order = new Aphabetizer();
 
-        TElement.addChangeObservers(shift);
-        TElement.addChangeObservers(order);
+        inputLines.addChangeObservers(shift);
+        shiftedLines.addChangeObservers(order);
 
         Input input = new Input();
         input.readLines(inputLines);

@@ -31,10 +31,8 @@ public class Aphabetizer implements IChangeObserver {
 
     public boolean checkWordOrder(String actual, String line) {
         int index = 0;
-        //while(Character.toLowerCase(actual.charAt(index)) == Character.toLowerCase(line.charAt(index)))
         while(Character.toLowerCase(checkAccent(actual, index)) == Character.toLowerCase(checkAccent(line, index)))
             index++;
-        //if(Character.toLowerCase(actual.charAt(index)) < Character.toLowerCase(line.charAt(index)))
         if(Character.toLowerCase(checkAccent(actual, index)) < Character.toLowerCase(checkAccent(line, index)))
             return true;
         else
