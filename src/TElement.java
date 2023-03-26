@@ -10,9 +10,6 @@ public abstract class TElement extends Object {
                 o.notifyListener(changedElement);
         }
     }
-    public void registerWithChangeEvent(IChangeObserver o) {
-        changeObservers.add(o);
-    }
     public void addChangeObservers(IChangeObserver o){
         changeObservers.add(o);
     }
