@@ -8,7 +8,7 @@ public class Input {
     }
 
     public void readLines (Lines inputLines){
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "Cp850");
 
         System.out.println("Introduce las lineas de texto (para terminar introduce una linea vacia):");
 
